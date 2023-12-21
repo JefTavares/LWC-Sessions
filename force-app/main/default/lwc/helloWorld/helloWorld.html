@@ -1,7 +1,10 @@
 <!--Toda a construição deve estar dentro da tag <template>-->
 <template>
   <lightning-card title="Hello World LWC">
-    <div>Hello {dynamicGreeting}</div>
+    <div class="greeting-class">Hello {dynamicGreeting}</div>
+    <div style="color: white; background: black">Inline css Style</div>
+
+    <div>Styling with element tag name</div>
 
     <lightning-input label="Greeting" onchange={greetingChangeHandler}></lightning-input>
   </lightning-card>
