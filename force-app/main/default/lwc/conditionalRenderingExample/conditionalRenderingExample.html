@@ -7,4 +7,25 @@
   <template if:false={displayDiv}>
     <div>I am false</div>
   </template>
+
+  <!--for:each a variavel @track do js-->
+  <!--for:item o nome que eu dei aqui city (uma variavel da lista)-->
+  <template for:each={cityList} for:item="city">
+    <!--Precisamos atribuir uma chave a ela e podemos dar a própria “cidade” como chave. No seu caso
+        Se você tem um objeto de ID e nome, deseja atribuir ID como uma chave aqui e pode querer
+        nome de exibição como na saída.
+        Always make sure you assign a unique value within the key attribute as this being used by 
+        framework to uniquely identify an element
+    -->
+    <p key={city}>{city}</p>
+  </template>
+
+  <h1>Below is an example of interator directive</h1>
+  <template iterator:it={cityList}>
+    <!--iterator can be very useful if you want to apply special rendering on your elements dynamically 
+        based on their index.
+        It has few useful properties like it.first, it.last and i.index
+    -->
+    <p key={it.value}>it.value</p>
+  </template>
 </template>
