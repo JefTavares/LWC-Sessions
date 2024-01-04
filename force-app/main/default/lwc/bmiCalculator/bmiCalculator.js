@@ -38,4 +38,11 @@ export default class BmiCalculator extends LightningElement {
     this.cardTitle = "Changed value";
     console.log("value: ", this.cardTitle);
   }
+
+  get bmiValue() {
+    if (this.bmi === undefined) {
+      return "";
+    }
+    return `Your BMI is: ${this.bmi}`;
+  }
 }
