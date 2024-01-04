@@ -1,0 +1,80 @@
+<template>
+  <lightning-card title="Simple Calculator" icon-name="standard:formula">
+    <lightning-layout multiple-rows>
+      <lightning-layout-item size="12" padding="around-medium">
+        <lightning-input type="number" name="firstNumber" onchange={numberChangeHandler}></lightning-input>
+      </lightning-layout-item>
+      <lightning-layout-item size="12" padding="around-medium">
+        <lightning-input type="number" name="secoundNumber" onchange={numberChangeHandler}></lightning-input>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12" padding="around-medium">
+        <lightning-button-group>
+          <lightning-button
+            label="Add"
+            icon-name="utility:add"
+            icon-position="right"
+            onclick={addHandler}
+          ></lightning-button>
+          <lightning-button
+            label="Subtract"
+            icon-name="utility:dash"
+            icon-position="right"
+            onclick={subHandler}
+          ></lightning-button>
+          <lightning-button
+            label="Multiply"
+            icon-name="utility:close"
+            icon-position="right"
+            onclick={multiplyHandler}
+          ></lightning-button>
+          <lightning-button
+            label="Divide"
+            icon-name="utility:magicwand"
+            icon-position="right"
+            onclick={divisionHandler}
+          ></lightning-button>
+        </lightning-button-group>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12" padding="around-medium">
+        <lightning-formatted-text value={currentResult}></lightning-formatted-text>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12" padding="around-medium">
+        <lightning-input
+          type="checkbox"
+          label="Show Previous Results"
+          onchange={showPreviousResultToggle}
+        ></lightning-input>
+      </lightning-layout-item>
+
+      <lightning-layout-item size="12" padding="around-medium">
+        <template if:true={showPreviousResult}>
+          <ul>
+            <template iterator:result={previousResult}>
+              <li key={result.value}>
+                <div if:true={result.first} class="slds-border_top"></div>
+                <lightning-formatted-text value={result.value}></lightning-formatted-text>
+                <div if:true={result.last} class="slds-border_bottom"></div>
+              </li>
+            </template>
+          </ul>
+        </template>
+      </lightning-layout-item>
+
+      <!--
+Então, aqui estou usando os componentes básicos do Lightning, 
+como lightning-formatted-text, lightning-layout-item, lightning-layout e lightning-card.
+Isto não é obrigatório.
+Você também pode usar seu elemento HTML normal, bem como tags div ou tags de parágrafo ou tags de expansão
+para criar sua IU.
+https://developer.salesforce.com/docs/component-library/overview/components
+Mas é melhor usarmos componentes básicos do Lightning porque é mais fácil criar a UI que você está
+usando componentes baseados em Lightning e para isso você pode consultar a biblioteca de componentes 
+
+para verificar todos os diferentes componentes de base Lightning disponíveis para nós.
+      -->
+    </lightning-layout>
+  </lightning-card>
+</template>
