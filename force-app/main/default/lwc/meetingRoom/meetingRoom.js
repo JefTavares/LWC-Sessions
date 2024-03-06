@@ -1,10 +1,18 @@
-import { LightningElement, api } from "lwc";
+import { LightningElement, api, wire } from "lwc";
+import { fireEvent } from "c/pubsub";
+import { CurrentPageReference } from "lightning/navigation";
 
-//Exemplos de propriedades publicas
 export default class MeetingRoom extends LightningElement {
-  //@API você pode criar uma propriedade pública reativa
-  //as informações desse cara vem do component pai meetingRooms
-  //@api meetingRoomInfo; //{roomName: 'A-01', roomCapacity: '12'}
+  @api meetingRoomInfo = { roomName: "A-01", roomCapacity: "12" };
 
   @api showRoomInfo = false;
+
+  @wire(CurrentPageReference) pageReference;
+
+  tileClickHandler() {
+    const tileClicked = new CustomEvent("tileclick", { detail: this.meetingRoomInfo, bubbles: true });
+
+    this.dispatchEvent(tileClicked);
+    fireEvent(this.pageReference, "pubsubtileclick", this.meetingRoomInfo);
+  }
 }

@@ -1,3 +1,23 @@
+# Notas do Desenvolvimento
+
+Os perfis de usuario, no caso usando apenas Administrador não esto nesse pacote.
+
+Por isso é necessario dar permissão ao Aplicativo `LWC_Sessions` e as tabs `LDS` e `Simple calculator`
+
+## Documentações Uteis
+
+Uma breve lista de documentação utilizada no aprendizado
+
+- Documentação do [LDS - Lightning Data Service](https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/data_service.htm)
+
+- (Component Library)[https://developer.salesforce.com/docs/component-library/bundle/lightning-button-icon-stateful/example]
+
+## Outros DOCs
+
+- [Deploy com vscode](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_push_md_to_scratch_org.htm)
+
+- [Open SF Pages App From VSCode](https://medium.com/@idanblich/open-salesforce-pages-and-lex-app-directly-from-vscode-38e889e1759a)
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
