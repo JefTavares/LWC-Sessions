@@ -15,6 +15,6 @@ export default class LifecycleDemo extends LightningElement {
   }
 
   disconnectedCallback() {
-    console.log("Component DisConnected Callback is called");
+    console.log("Component DisConnected Callback is called!");
   }
 }
