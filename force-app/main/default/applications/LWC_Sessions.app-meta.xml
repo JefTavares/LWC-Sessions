@@ -17,6 +17,7 @@
     <tabs>Apex</tabs>
     <tabs>Navigation</tabs>
     <tabs>Aura_And_LWC</tabs>
+    <tabs>Rent_A_Car</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LWC_Sessions_UtilityBar</utilityBar>
 </CustomApplication>
